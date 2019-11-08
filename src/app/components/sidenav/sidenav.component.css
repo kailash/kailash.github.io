@@ -1,0 +1,52 @@
+.example-container {
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    border: 1px solid #555;
+}
+
+.side-nav {
+    width: 25vw;
+    padding-top: 5vh;
+    background-color: #161616;
+    color: white;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: #9c27b0;
+}
+
+.mat-list-text:hover {
+    color: #9c27b0;
+}
+
+.image {
+    margin: auto;
+    width: 15vw;
+    height: 30vh;
+    border-radius: 50%;
+    background-color: aqua;
+}
+
+.connect-grid {
+    margin: auto;
+    padding: 0px;
+}
+
+.list {
+    align-content: center;
+    padding-left: 11vh;
+}
+
+.mat-list-base .mat-list-item.mat-list-item-with-avatar,
+.mat-list-base .mat-list-option.mat-list-item-with-avatar {
+    height: 44px;
+}
+
+.mat-list-base .mat-list-item {
+    color: white;
+}

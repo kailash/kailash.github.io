@@ -1,0 +1,25 @@
+.overview-card {
+    margin: 2px;
+    margin-left: 5px;
+    padding: 50px;
+    position: relative;
+    border-radius: 0px;
+}
+
+.mat-card .mat-divider-horizontal {
+    position: relative;
+}
+
+.skills {
+    width: 120px;
+    height: 20px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 5px;
+}
+
+.mat-chip {
+    border-radius: 50px;
+    margin: 2px;
+    padding: 2px;
+}

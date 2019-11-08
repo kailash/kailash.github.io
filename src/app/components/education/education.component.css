@@ -1,0 +1,18 @@
+.overview-card{
+    margin:2px;
+    margin-left: 5px;
+    padding:50px;
+    position: relative;
+    border-radius: 0px;
+}
+
+.mat-card .mat-divider-horizontal{
+    position: relative;
+}
+
+mat-card-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+

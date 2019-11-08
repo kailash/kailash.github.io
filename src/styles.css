@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; border-radius: 0px !important;}
+.card-header{
+    font-family: 'Leckerli One', cursive;
+    font-size: 48px;
+}
+.mat-card-header .mat-card-title{
+    font-size: 58px;
+}
+mat-card {
+    width: calc(100% - 110px);
+    height: calc(100% - 110px);
+    position: relative;
+}
+
+.in-line-card{
+    width:50vw;
+    padding-top:40px;
+}
+
