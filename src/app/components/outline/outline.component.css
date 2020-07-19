@@ -6,11 +6,6 @@
     border-radius: 0px;
 }
 
-mat-card {
-    width: calc(100% - 110px);
-    height: calc(100% - 110px);
-}
-
 .mat-card .mat-divider-horizontal {
     position: relative;
 }
@@ -18,4 +13,20 @@ mat-card {
 .mat-list-base .mat-list-item,
 .mat-list-base .mat-list-option {
     height: 25px;
+}
+
+.content {
+    margin: 2px;
+    padding: 2px;
+    font-size: 16px;
+}
+
+.list>ul>li {
+    margin: 2px;
+    padding: 2px;
+}
+
+mat-chip {
+    padding: 2px;
+    border-radius: 10px;
 }

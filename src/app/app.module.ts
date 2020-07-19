@@ -34,7 +34,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
-import {MatTreeModule} from '@angular/material/tree';
+import {MatTreeModule,} from '@angular/material/tree';
 
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { faGithub,faLinkedinIn,faTwitter,faJava,faHtml5,faJs,faCss3,} from '@fortawesome/free-brands-svg-icons';
@@ -50,6 +50,7 @@ import { ExperienceComponent } from './components/experience/experience.componen
 import { EducationComponent } from './components/education/education.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { CardComponent } from './components/card/card.component';
+import { ContactCardComponent } from './components/contact-card/contact-card.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { CardComponent } from './components/card/card.component';
     ExperienceComponent,
     EducationComponent,
     ContactComponent,
-    CardComponent
+    CardComponent,
+    ContactCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -102,7 +104,7 @@ import { CardComponent } from './components/card/card.component';
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-    FontAwesomeModule
+    FontAwesomeModule,MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

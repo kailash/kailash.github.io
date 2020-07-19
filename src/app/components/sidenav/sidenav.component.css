@@ -1,52 +1,65 @@
-.example-container {
-    width: 100vw;
-    height: 100vh;
-    margin: 0px;
-    border: 1px solid #555;
+.container {
+    display: flex;
+    justify-content: center;
 }
 
-.side-nav {
-    width: 25vw;
-    padding-top: 5vh;
-    background-color: #161616;
+.example-stretched-tabs {
+    max-width: 100px;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.example-tab-icon {
+    margin-right: 8px;
+}
+
+.tabs {
+    width: 65vw;
+    height: 100%;
+}
+
+.header-icon {
     color: white;
 }
 
-a {
-    color: white;
+.title {
+    font-family: 'Leckerli One', cursive;
+    font-size: 48px;
 }
 
-a:hover {
-    color: #9c27b0;
+
+/* .mat-tab-body {
+    animation: fade-out 2s;
+    opacity: 0;
 }
 
-.mat-list-text:hover {
-    color: #9c27b0;
+.mat-tab-body.mat-tab-body-active {
+    animation: fade-in 2s;
+    opacity: 1;
 }
 
-.image {
-    margin: auto;
-    width: 15vw;
-    height: 30vh;
-    border-radius: 50%;
-    background-color: aqua;
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
-.connect-grid {
-    margin: auto;
-    padding: 0px;
-}
-
-.list {
-    align-content: center;
-    padding-left: 11vh;
-}
-
-.mat-list-base .mat-list-item.mat-list-item-with-avatar,
-.mat-list-base .mat-list-option.mat-list-item-with-avatar {
-    height: 44px;
-}
-
-.mat-list-base .mat-list-item {
-    color: white;
-}
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+} */

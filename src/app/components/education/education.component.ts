@@ -16,9 +16,9 @@ export class EducationComponent implements OnInit {
 
   ngOnInit() {
     this.educations=[];
-    this.education=new Education('Master of Computer Application','GGSIPU','New Delhi (India)');
+    this.education=new Education('Master of Computer Application','GGSIPU','New Delhi (India)','2010 - 2013');
     this.educations.push(this.education);
-    this.education=new Education('Bachelor of Computer Science','Delhi University','New Delhi (India)');
+    this.education=new Education('Bachelor of Computer Science','Delhi University','New Delhi (India)','2006 - 2009');
     this.educations.push(this.education);
   }
 

@@ -1,0 +1,27 @@
+<mat-card class="card">
+    <mat-card-header>
+        <mat-card-title class="title">{{contact.name}}</mat-card-title>
+        <mat-card-subtitle>{{contact.desg}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-list class="list">
+            <mat-list-item>
+                <mat-icon mat-list-icon>stay_primary_portrait</mat-icon>
+                <h4 mat-line>{{contact.phone}}</h4>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon mat-list-icon>place</mat-icon>
+                <h4 mat-line>{{contact.city}}, ({{contact.place}}) </h4>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon mat-list-icon>alternate_email</mat-icon>
+                <h4 mat-line>{{contact.email}}</h4>
+            </mat-list-item>
+        </mat-list>
+        <mat-card-actions>
+            <button mat-button color="primary" (click)="downloadResume()"> Download Resume <span class="material-icons">
+                play_for_work
+                </span></button>
+        </mat-card-actions>
+    </mat-card-content>
+</mat-card>

@@ -22,4 +22,12 @@ export class SidenavComponent implements OnInit {
     this.linkedin='https://in.linkedin.com/in/kailashadhikari';
   }
 
+  gotoGithub(){
+    window.location.href =this.github;
+  }
+
+  gotoLinkedin(){
+    window.location.href =this.linkedin;
+  }
+
 }

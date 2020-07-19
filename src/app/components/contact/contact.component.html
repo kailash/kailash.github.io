@@ -8,8 +8,6 @@
 
     <mat-card-content>
         <mat-divider class="divider"></mat-divider>
-        <p>
-
-        </p>
+        <app-contact-card *ngFor='let contact of contacts' [contact]=contact></app-contact-card>
     </mat-card-content>
 </mat-card>

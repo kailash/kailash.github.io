@@ -1,49 +1,53 @@
-<mat-drawer-container class="example-container">
-    <mat-drawer class="side-nav" mode="side" opened>
-        <div class="image"></div>
-        <mat-grid-list class="connect-grid" cols=5 rowHeight="3em">
-            <mat-grid-tile></mat-grid-tile>
-            <mat-grid-tile>
-                <a href="{{github}}">
-                    <fa-icon [icon]="['fab', 'github']" size="2x"></fa-icon>
-                </a>
-            </mat-grid-tile>
-            <mat-grid-tile>
-                <a href="{{linkedin}}">
-                    <fa-icon [icon]="['fab','linkedin-in']" size="2x"></fa-icon>
-                </a>
-            </mat-grid-tile>
-            <mat-grid-tile>
-                <fa-icon [icon]="['fab','twitter']" size="2x"></fa-icon>
-            </mat-grid-tile>
-            <mat-grid-tile></mat-grid-tile>
-        </mat-grid-list>
-        <div class="list-container">
-            <mat-nav-list class="list">
-                <a mat-list-item [routerLink]="['/me']" routerLinkActive="active">
-                    <mat-icon mat-list-icon>person</mat-icon>
-                    <h4 mat-line>Overview</h4>
-                </a>
-                <a mat-list-item [routerLink]="['/skills']" routerLinkActive="active">
-                    <mat-icon mat-list-icon>grade</mat-icon>
-                    <h4 mat-line>Skills</h4>
-                </a>
-                <a mat-list-item [routerLink]="['/experience']" routerLinkActive="active">
-                    <mat-icon mat-list-icon>work</mat-icon>
-                    <h4 mat-line>Experience</h4>
-                </a>
-                <a mat-list-item [routerLink]="['/education']" routerLinkActive="active">
-                    <mat-icon mat-list-icon>account_balance</mat-icon>
-                    <h4 mat-line>Education</h4>
-                </a>
-                <a mat-list-item [routerLink]="['/contact']" routerLinkActive="active">
-                    <mat-icon mat-list-icon>contact_mail</mat-icon>
-                    <h4 mat-line>Contact</h4>
-                </a>
-            </mat-nav-list>
-        </div>
-    </mat-drawer>
-    <mat-drawer-content class="main-content">
-        <router-outlet></router-outlet>
-    </mat-drawer-content>
-</mat-drawer-container>
+<mat-toolbar class="header" color="primary">
+    <span class="title">Kailash Adhikari </span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon" (click)="gotoGithub()">
+                <fa-icon [icon]="['fab', 'github']"  size="2x"></fa-icon>
+    </button>
+    <button mat-icon-button class="example-icon" (click)="gotoLinkedin()">
+                    <fa-icon [icon]="['fab','linkedin-in']"  size="2x"></fa-icon>
+    </button>
+    <button mat-icon-button class="example-icon">
+            <fa-icon [icon]="['fab','twitter']" size="2x"></fa-icon>
+    </button>
+
+</mat-toolbar>
+<div class="container" fxFlex="80" fxFill>
+    <mat-tab-group class="tabs" mat-align-tabs="center" mat-stretch-tabs>
+        <mat-tab label="Outline">
+            <ng-template mat-tab-label>
+                <mat-icon class="example-tab-icon">perm_identity</mat-icon>
+                About Me
+            </ng-template>
+            <app-outline></app-outline>
+        </mat-tab>
+        <mat-tab label="Skills">
+            <ng-template mat-tab-label>
+                <mat-icon class="example-tab-icon">grade</mat-icon>
+                Skills
+            </ng-template>
+            <app-skills></app-skills>
+        </mat-tab>
+        <mat-tab label="Experience">
+            <ng-template mat-tab-label>
+                <mat-icon class="example-tab-icon">work</mat-icon>
+                Experience
+            </ng-template>
+            <app-experience></app-experience>
+        </mat-tab>
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon class="example-tab-icon">account_balance</mat-icon>
+                Education
+            </ng-template>
+            <app-education></app-education>
+        </mat-tab>
+        <mat-tab label="Contact">
+            <ng-template mat-tab-label>
+                <mat-icon class="example-tab-icon">contact_mail</mat-icon>
+                Contact
+            </ng-template>
+            <app-contact></app-contact>
+        </mat-tab>
+    </mat-tab-group>
+</div>
