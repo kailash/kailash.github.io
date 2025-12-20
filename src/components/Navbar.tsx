@@ -5,7 +5,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { navItems } from "../config/nav-items";
 
 export default function Navbar() {
-    const activeSection = useScrollSpy(navItems.map(item => item.id));
+    const activeSection = useScrollSpy();
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     return (
