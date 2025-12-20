@@ -17,7 +17,7 @@ export function useScrollSpy(ids: string[]) {
                     }
                 },
                 {
-                    rootMargin: "-40% 0px -50% 0px",
+                    rootMargin: "0px 0px -50% 0px",
                     threshold: 0,
                 }
             );

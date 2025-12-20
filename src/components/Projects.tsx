@@ -4,7 +4,7 @@ import { projects } from "../data/projects";
 
 export default function Projects() {
     return (
-        <section id="projects" className="w-full max-w-5xl mx-auto py-20 sm:py-24 px-6 sm:px-8 md:px-12 border-t border-gray-200">
+        <section id="projects" className="w-full max-w-5xl mx-auto py-20 sm:py-24 px-6 sm:px-8 md:px-12">
             <Reveal>
                 <h2 className="text-3xl sm:text-4xl font-bold mb-2">Projects</h2>
                 <div className="w-16 h-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full mb-8"></div>

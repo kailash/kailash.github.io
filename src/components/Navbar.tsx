@@ -36,19 +36,23 @@ export default function Navbar() {
                     {navItems.map((item) => {
                         const IconComponent = item.icon;
                         return (
-                            <a
-                                key={item.id}
-                                href={`#${item.id}`}
-                                className={`flex items-center justify-end gap-3 px-4 py-2 font-medium text-sm transition-all duration-300 ${
-                                    activeSection === item.id
-                                        ? "text-purple-600"
-                                        : "text-gray-600 hover:text-purple-400"
-                                }`}
-                                title={item.label}
-                            >
-                                <span>{item.label}</span>
-                                <IconComponent sx={{ fontSize: 20 }} />
-                            </a>
+                            <div key={item.id} className="relative">
+                                <a
+                                    href={`#${item.id}`}
+                                    className={`flex items-center justify-end gap-3 px-4 py-3 font-bold text-sm transition-all duration-300 ${
+                                        activeSection === item.id
+                                            ? "text-purple-600"
+                                            : "text-gray-700 hover:text-purple-600"
+                                    }`}
+                                    title={item.label}
+                                >
+                                    <span>{item.label}</span>
+                                    <IconComponent sx={{ fontSize: 22 }} />
+                                </a>
+                                {activeSection === item.id && (
+                                    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-purple-600 rounded-full"></div>
+                                )}
+                            </div>
                         );
                     })}
                 </div>
@@ -86,8 +90,8 @@ export default function Navbar() {
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 className={`flex items-center gap-3 px-4 py-3 font-medium text-sm transition-all duration-300 border-b border-gray-100 last:border-b-0 ${
                                     activeSection === item.id
-                                        ? "text-purple-600 bg-purple-50"
-                                        : "text-gray-600 hover:bg-gray-50"
+                                        ? "text-purple-600"
+                                        : "text-gray-600 hover:text-purple-600"
                                 }`}
                             >
                                 <IconComponent sx={{ fontSize: 20 }} />
