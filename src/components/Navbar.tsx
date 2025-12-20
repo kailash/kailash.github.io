@@ -23,7 +23,7 @@ export default function Navbar() {
     return (
         <>
             {/* Desktop Navbar - Fixed on left */}
-            <nav className="hidden md:flex fixed left-0 top-0 h-screen w-96 bg-white z-50 flex-col items-end py-8 px-6 border-r border-gray-100">
+            <nav className="hidden md:flex fixed left-0 top-0 h-screen w-96 bg-white z-50 flex-col items-end py-8 px-6 border-r border-gray-300 shadow-sm">
                 {/* Image Placeholder */}
                 <div className="mb-12">
                     <div className="h-32 w-32 rounded-full bg-gray-300 flex items-center justify-center">
@@ -55,7 +55,7 @@ export default function Navbar() {
             </nav>
 
             {/* Mobile Navbar - Top fixed (vertical only) */}
-            <nav className="md:hidden flex sm:hidden fixed top-0 left-0 right-0 h-16 bg-white border-b border-gray-100 z-50 flex items-center justify-between px-4">
+            <nav className="md:hidden flex sm:hidden fixed top-0 left-0 right-0 h-16 bg-white border-b border-gray-300 z-50 flex items-center justify-between px-4 shadow-sm">
                 {/* Logo/Photo on mobile */}
                 <div className="h-10 w-10 rounded-full bg-gray-300 flex items-center justify-center flex-shrink-0">
                     <span className="text-gray-500 text-xs">P</span>
@@ -99,7 +99,7 @@ export default function Navbar() {
             )}
 
             {/* Landscape Mobile Navbar - Fixed on left */}
-            <nav className="hidden sm:flex md:hidden fixed left-0 top-0 h-screen w-20 bg-white z-50 flex-col items-center py-8 px-2 border-r border-gray-100">
+            <nav className="hidden sm:flex md:hidden fixed left-0 top-0 h-screen w-20 bg-white z-50 flex-col items-center py-8 px-2 border-r border-gray-300 shadow-sm">
                 {/* Image Placeholder */}
                 <div className="mb-6">
                     <div className="h-12 w-12 rounded-full bg-gray-300 flex items-center justify-center">
