@@ -1,33 +1,32 @@
 import { useEffect, useState } from "react";
+import { navItems } from "../config/nav-items";
 
-export function useScrollSpy(ids: string[]) {
-    const [activeId, setActiveId] = useState<string>("home");
+const SECTION_IDS = navItems.map(item => item.id);
+
+export function useScrollSpy(p0: string[]) {
+    const [activeId, setActiveId] = useState("home");
 
     useEffect(() => {
-        const observers: IntersectionObserver[] = [];
-
-        ids.forEach(id => {
-            const element = document.getElementById(id);
-            if (!element) return;
-
-            const observer = new IntersectionObserver(
-                ([entry]) => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        setActiveId(id);
+                        setActiveId(entry.target.id);
                     }
-                },
-                {
-                    rootMargin: "0px 0px -50% 0px",
-                    threshold: 0,
-                }
-            );
+                });
+            },
+            {
+                rootMargin: "-40% 0px -50% 0px",
+            }
+        );
 
-            observer.observe(element);
-            observers.push(observer);
+        SECTION_IDS.forEach((id) => {
+            const el = document.getElementById(id);
+            if (el) observer.observe(el);
         });
 
-        return () => observers.forEach(o => o.disconnect());
-    }, [ids]);
+        return () => observer.disconnect();
+    }, []);
 
     return activeId;
 }

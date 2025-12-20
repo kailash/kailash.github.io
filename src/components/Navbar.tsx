@@ -1,24 +1,12 @@
 import { useState } from "react";
-import HomeIcon from "@mui/icons-material/Home";
-import PersonIcon from "@mui/icons-material/Person";
-import ElectricBoltIcon from "@mui/icons-material/ElectricBolt";
-import WorkIcon from "@mui/icons-material/Work";
-import MailIcon from "@mui/icons-material/Mail";
+import { useScrollSpy } from "../hooks/useScrollSpy";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
-import { useScrollSpy } from "../hooks/useScrollSpy";
+import { navItems } from "../config/nav-items";
 
 export default function Navbar() {
-    const activeSection = useScrollSpy(["home", "about", "skills", "projects", "contact"]);
+    const activeSection = useScrollSpy(navItems.map(item => item.id));
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-    const navItems = [
-        { id: "home", label: "Home", icon: HomeIcon },
-        { id: "about", label: "About", icon: PersonIcon },
-        { id: "skills", label: "Skills", icon: ElectricBoltIcon },
-        { id: "projects", label: "Projects", icon: WorkIcon },
-        { id: "contact", label: "Contact", icon: MailIcon },
-    ];
 
     return (
         <>
@@ -39,11 +27,10 @@ export default function Navbar() {
                             <div key={item.id} className="relative">
                                 <a
                                     href={`#${item.id}`}
-                                    className={`flex items-center justify-end gap-3 px-4 py-3 font-bold text-sm transition-all duration-300 ${
-                                        activeSection === item.id
+                                    className={`flex items-center justify-end gap-3 px-4 py-3 font-bold text-sm transition-all duration-300 ${activeSection === item.id
                                             ? "text-purple-600"
                                             : "text-gray-700 hover:text-purple-600"
-                                    }`}
+                                        }`}
                                     title={item.label}
                                 >
                                     <span>{item.label}</span>
@@ -88,11 +75,10 @@ export default function Navbar() {
                                 key={item.id}
                                 href={`#${item.id}`}
                                 onClick={() => setIsMobileMenuOpen(false)}
-                                className={`flex items-center gap-3 px-4 py-3 font-medium text-sm transition-all duration-300 border-b border-gray-100 last:border-b-0 ${
-                                    activeSection === item.id
+                                className={`flex items-center gap-3 px-4 py-3 font-medium text-sm transition-all duration-300 border-b border-gray-100 last:border-b-0 ${activeSection === item.id
                                         ? "text-purple-600"
                                         : "text-gray-600 hover:text-purple-600"
-                                }`}
+                                    }`}
                             >
                                 <IconComponent sx={{ fontSize: 20 }} />
                                 <span>{item.label}</span>
@@ -119,11 +105,10 @@ export default function Navbar() {
                             <a
                                 key={item.id}
                                 href={`#${item.id}`}
-                                className={`flex items-center justify-center p-2 rounded-lg font-medium text-xs transition-all duration-300 ${
-                                    activeSection === item.id
+                                className={`flex items-center justify-center p-2 rounded-lg font-medium text-xs transition-all duration-300 ${activeSection === item.id
                                         ? "text-purple-600"
                                         : "text-gray-600 hover:text-purple-400"
-                                }`}
+                                    }`}
                                 title={item.label}
                             >
                                 <IconComponent sx={{ fontSize: 16 }} />

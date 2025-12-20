@@ -1,23 +1,17 @@
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
+import type { ReactNode } from "react";
 
-
-interface Props {
-    children: React.ReactNode;
+interface RevealProps {
+    children: ReactNode;
 }
 
-
-export default function Reveal({ children }: Props) {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-
+export default function Reveal({ children }: RevealProps) {
     return (
         <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 40 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
         >
             {children}
         </motion.div>
