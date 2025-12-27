@@ -1,4 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
+import { Button } from "@/components/ui/button";
 
 export default function Hero() {
     const { scrollY } = useScroll();
@@ -16,14 +17,13 @@ export default function Hero() {
                 initial={{ opacity: 0, y: -40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="w-full"
             >
                 <svg
                     width="100%"
                     height="280"
                     viewBox="0 0 1400 280"
-                    className="w-full block"
                     preserveAspectRatio="xMidYMid slice"
+                    style={{ display: "block" }}
                 >
                     <defs>
                         <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -99,12 +99,12 @@ export default function Hero() {
                 </p>
 
                 <div className="mt-8 flex gap-4 justify-center flex-wrap">
-                    <button className="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all duration-300 font-medium">
+                    <Button className="px-6 py-2 bg-purple-600 text-white hover:bg-purple-700 transition-all duration-300 font-medium h-auto">
                         View My Work
-                    </button>
-                    <button className="px-6 py-2 border-2 border-purple-600 text-purple-600 rounded-lg hover:bg-purple-50 transition-all duration-300 font-medium">
+                    </Button>
+                    <Button variant="outline" className="px-6 py-2 border-2 border-purple-600 text-purple-600 hover:bg-purple-50 transition-all duration-300 font-medium h-auto">
                         Get in Touch
-                    </button>
+                    </Button>
                 </div>
             </motion.div>
         </section>

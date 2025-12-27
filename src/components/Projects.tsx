@@ -1,6 +1,7 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import Reveal from "./Reveal";
 import { projects } from "../data/projects";
-
 
 export default function Projects() {
     return (
@@ -10,26 +11,33 @@ export default function Projects() {
                 <div className="w-16 h-1 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full mb-8"></div>
             </Reveal>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {projects.map(p => (
                     <Reveal key={p.title}>
-                        <div className="border border-gray-200 hover:border-purple-500 p-6 rounded-lg hover:shadow-lg transition-all duration-300 group cursor-pointer">
-                            <h3 className="text-xl font-semibold group-hover:text-purple-600 transition-colors">{p.title}</h3>
-                            <p className="text-gray-600 mt-2 text-sm sm:text-base">{p.description}</p>
-                            <div className="mt-4 flex flex-wrap gap-2">
-                                {p.stack.split(", ").map((tech) => (
-                                    <span 
-                                        key={tech}
-                                        className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded"
-                                    >
-                                        {tech}
-                                    </span>
-                                ))}
-                            </div>
-                            <button className="mt-4 text-purple-600 font-medium text-sm hover:text-purple-700 flex items-center gap-2 group-hover:gap-3 transition-all">
-                                View Project →
-                            </button>
-                        </div>
+                        <Card className="h-full border border-gray-200 hover:border-purple-300 hover:shadow-lg transition-all duration-300 cursor-pointer">
+                            <CardContent className="p-6">
+                                <h3 className="text-xl font-semibold text-gray-900 mb-2 hover:text-purple-600 transition-colors duration-300">
+                                    {p.title}
+                                </h3>
+                                <p className="text-sm text-gray-600 mt-2 mb-4 leading-relaxed">
+                                    {p.description}
+                                </p>
+                                <div className="flex flex-wrap gap-2 mb-4">
+                                    {p.stack.split(", ").map((tech) => (
+                                        <Badge
+                                            key={tech}
+                                            className="bg-purple-100 text-purple-700 text-xs font-medium"
+                                            variant="secondary"
+                                        >
+                                            {tech}
+                                        </Badge>
+                                    ))}
+                                </div>
+                                <button className="text-purple-600 font-semibold text-sm hover:text-purple-700 transition-colors duration-300">
+                                    View Project →
+                                </button>
+                            </CardContent>
+                        </Card>
                     </Reveal>
                 ))}
             </div>

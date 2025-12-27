@@ -1,3 +1,5 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import Reveal from "./Reveal";
 
 const skillCategories = [
@@ -30,22 +32,25 @@ export default function Skills() {
             <div className="grid md:grid-cols-2 gap-8">
                 {skillCategories.map((cat) => (
                     <Reveal key={cat.category}>
-                        <div className="p-6 bg-white border border-gray-200 rounded-lg hover:border-purple-300 hover:shadow-lg transition-all duration-300">
-                            <h3 className="text-lg font-bold text-purple-600 mb-4">{cat.category}</h3>
-                            <div className="flex flex-wrap gap-2">
-                                {cat.skills.map((skill) => (
-                                    <span
-                                        key={skill}
-                                        className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium hover:bg-purple-200 transition-colors"
-                                    >
-                                        {skill}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
+                        <Card className="border border-gray-200 hover:border-purple-300 hover:shadow-lg transition-all duration-300">
+                            <CardContent className="pt-6">
+                                <h3 className="text-lg font-bold text-purple-600 mb-4">{cat.category}</h3>
+                                <div className="flex flex-wrap gap-2">
+                                    {cat.skills.map((skill) => (
+                                        <Badge
+                                            key={skill}
+                                            className="bg-purple-100 text-purple-700 hover:bg-purple-200 transition-colors"
+                                            variant="secondary"
+                                        >
+                                            {skill}
+                                        </Badge>
+                                    ))}
+                                </div>
+                            </CardContent>
+                        </Card>
                     </Reveal>
                 ))}
             </div>
         </section>
     );
-}; 
+}

@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import Reveal from "./Reveal";
 
 export default function Contact() {
@@ -17,20 +18,14 @@ export default function Contact() {
 
             <Reveal>
                 <div className="flex flex-col sm:flex-row gap-4">
-                    <a 
-                        href="mailto:kailash@example.com"
-                        className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all duration-300 font-medium text-center"
-                    >
-                        Send Email
-                    </a>
-                    <a 
-                        href="https://www.linkedin.com/in/kailash"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="px-6 py-3 border-2 border-purple-600 text-purple-600 rounded-lg hover:bg-purple-50 transition-all duration-300 font-medium text-center"
-                    >
-                        Connect on LinkedIn
-                    </a>
+                    <Button asChild className="px-6 py-3 bg-purple-600 text-white hover:bg-purple-700 transition-all duration-300 font-medium h-auto">
+                        <a href="mailto:kailash@example.com">Send Email</a>
+                    </Button>
+                    <Button asChild variant="outline" className="px-6 py-3 border-2 border-purple-600 text-purple-600 hover:bg-purple-50 transition-all duration-300 font-medium h-auto">
+                        <a href="https://www.linkedin.com/in/kailash" target="_blank" rel="noopener noreferrer">
+                            Connect on LinkedIn
+                        </a>
+                    </Button>
                 </div>
             </Reveal>
         </section>
