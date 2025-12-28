@@ -9,19 +9,18 @@ import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white via-gray-50 to-white text-gray-900">
-      <Navbar />
-
-      {/* main content: top padding on mobile, margin on desktop and landscape mobile */}
-      <main className="ml-0 pt-16 sm:ml-20 sm:pt-0 md:ml-96 md:pt-0">
-        <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Contact />
-        <Footer />
-      </main>
+    <div className="min-h-screen bg-white text-gray-900 antialiased">
+      <Navbar>
+        <main className="flex-1">
+          <Hero />
+          <About />
+          <Skills />
+          <Experience />
+          <Projects />
+          <Contact />
+          <Footer />
+        </main>
+      </Navbar>
     </div>
   );
 }

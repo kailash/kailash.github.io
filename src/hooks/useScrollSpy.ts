@@ -7,25 +7,28 @@ export function useScrollSpy() {
   const [activeId, setActiveId] = useState("home");
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveId(entry.target.id);
+    // Simple scroll-based detection
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 100; // Add offset from top
+
+      for (const id of SECTION_IDS) {
+        const element = document.getElementById(id);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          // Check if section is in view
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveId(id);
+            break;
           }
-        });
-      },
-      {
-        rootMargin: "-40% 0px -50% 0px",
+        }
       }
-    );
+    };
 
-    SECTION_IDS.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
+    window.addEventListener("scroll", handleScroll);
+    // Call once on mount to set initial state
+    handleScroll();
 
-    return () => observer.disconnect();
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return activeId;

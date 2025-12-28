@@ -10,7 +10,7 @@ export default function Hero() {
     const textOpacity = useTransform(scrollY, [0, 200], [1, 0.85]);
 
     return (
-        <section id="home" className="w-full bg-white overflow-hidden">
+        <section id="home" className="w-full h-screen bg-white overflow-hidden flex flex-col">
             {/* SVG Background */}
             <motion.div
                 style={{ y: svgY }}
@@ -90,19 +90,19 @@ export default function Hero() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-center max-w-5xl mx-auto py-20 sm:py-24 px-6 sm:px-8 md:px-12"
             >
-                <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-primary leading-tight">
                     Hi, I&apos;m Kailash
                 </h1>
 
-                <p className="mt-4 text-base sm:text-lg text-gray-600">
+                <p className="mt-6 text-base sm:text-lg md:text-xl text-gray-600 font-light tracking-wide">
                     Full-Stack Developer • Problem Solver • Tech Enthusiast
                 </p>
 
                 <div className="mt-8 flex gap-4 justify-center flex-wrap">
-                    <Button className="px-6 py-2 bg-purple-600 text-white hover:bg-purple-700 transition-all duration-300 font-medium h-auto">
+                    <Button className="px-6 py-2 h-auto">
                         View My Work
                     </Button>
-                    <Button variant="outline" className="px-6 py-2 border-2 border-purple-600 text-purple-600 hover:bg-purple-50 transition-all duration-300 font-medium h-auto">
+                    <Button variant="outline" className="px-6 py-2 h-auto">
                         Get in Touch
                     </Button>
                 </div>
