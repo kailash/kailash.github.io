@@ -1,25 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Reveal from "./Reveal";
-
-const skillCategories = [
-    {
-        category: "Frontend",
-        skills: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"]
-    },
-    {
-        category: "Backend",
-        skills: ["Node.js", "Python", "Java", "Spring Boot"]
-    },
-    {
-        category: "Cloud & DevOps",
-        skills: ["AWS", "Azure", "Docker", "GitHub Actions"]
-    },
-    {
-        category: "Tools & Databases",
-        skills: ["Git", "PostgreSQL", "MongoDB", "REST APIs"]
-    }
-];
+import { certificationBadges, skillCategories } from "@/data/skills";
+import CredlyBadge from "./CreadlyBadge";
 
 export default function Skills() {
     return (
@@ -50,6 +33,9 @@ export default function Skills() {
                         </Card>
                     </Reveal>
                 ))}
+            </div>
+            <div className="grid md:grid-cols-1 gap-8 mt-10">
+                <CredlyBadge />
             </div>
         </section>
     );
