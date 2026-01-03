@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Reveal from "./Reveal";
-import { certificationBadges, skillCategories } from "@/data/skills";
+import { skillCategories } from "@/data/skills";
 import CredlyBadge from "./CreadlyBadge";
 
 export default function Skills() {
