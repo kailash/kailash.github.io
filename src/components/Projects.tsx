@@ -6,13 +6,13 @@ import { projects } from "../data/projects";
 
 export default function Projects() {
     return (
-        <section id="projects" className="w-full h-screen flex flex-col max-w-5xl mx-auto py-20 sm:py-24 px-6 sm:px-8 md:px-12">
+        <section id="projects" className="w-full min-h-auto py-20 sm:py-24 md:py-32 px-6 sm:px-8 md:px-12 max-w-5xl mx-auto">
             <Reveal>
                 <h2 className="text-3xl sm:text-4xl font-bold mb-2 text-gray-900">Projects</h2>
                 <div className="w-16 h-1 bg-primary rounded-full mb-8"></div>
             </Reveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 {projects.map(p => (
                     <Reveal key={p.title}>
                         <Card className="h-full border border-gray-200 hover:border-purple-400 hover:shadow-2xl transition-all duration-300 cursor-pointer group overflow-hidden bg-white hover:bg-gradient-to-br hover:from-white hover:to-purple-50/30">

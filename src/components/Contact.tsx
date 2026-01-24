@@ -3,7 +3,7 @@ import Reveal from "./Reveal";
 
 export default function Contact() {
     return (
-        <section id="contact" className="w-full h-screen flex flex-col max-w-5xl mx-auto py-20 sm:py-24 px-6 sm:px-8 md:px-12">
+        <section id="contact" className="w-full min-h-auto py-20 sm:py-24 md:py-32 px-6 sm:px-8 md:px-12 max-w-5xl mx-auto">
             <Reveal>
                 <h2 className="text-3xl sm:text-4xl font-bold mb-2 text-gray-900">Get In Touch</h2>
                 <div className="w-16 h-1 bg-primary rounded-full mb-8"></div>

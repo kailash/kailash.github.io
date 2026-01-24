@@ -1,6 +1,6 @@
 interface ExperienceItem {
     id: string;
-    title: string;
+    role: string;
     company: string;
     period: string;
     description: string;
@@ -10,7 +10,7 @@ interface ExperienceItem {
 export const experiences: ExperienceItem[] = [
     {
         id: "exp1",
-        title: "Senior Developer",
+        role: "Senior Developer",
         company: "Tech Company A",
         period: "2022 - Present",
         description: ".",
@@ -18,7 +18,7 @@ export const experiences: ExperienceItem[] = [
     },
     {
         id: "exp2",
-        title: "Full Stack Developer",
+        role: "Full Stack Developer",
         company: "Tech Company B",
         period: "2020 - 2022",
         description: ".",
@@ -26,7 +26,7 @@ export const experiences: ExperienceItem[] = [
     },
     {
         id: "exp3",
-        title: "Junior Developer",
+        role: "Junior Developer",
         company: "Tech Company C",
         period: "2018 - 2020",
         description: ".",

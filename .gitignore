@@ -7,12 +7,35 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
+pnpm-lock.yaml
+yarn.lock
+
+# Build output
 dist
 dist-ssr
+build
+out
 *.local
 
-# Editor directories and files
+# TypeScript
+*.tsbuildinfo
+.tsc-out
+tsconfig*.tsbuildinfo
+*.d.ts
+
+# Compiled config files (keep source .ts files only)
+tailwind.config.js
+postcss.config.js
+vite.config.js
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE and editor directories
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -22,3 +45,24 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+*.swp
+*.swo
+*~
+
+# OS files
+Thumbs.db
+.AppleDouble
+.LSOverride
+
+# Cache directories
+.cache
+.parcel-cache
+.next
+.nuxt
+coverage
+.nyc_output
+
+# Temporary files
+tmp
+temp
+*.tmp
