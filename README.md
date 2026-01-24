@@ -2,21 +2,15 @@
 
 ## Purpose
 
-A modern, responsive personal portfolio website built to showcase professional experience, projects, and skills. Designed with a clean, professional aesthetic featuring interactive animations and a mobile-first responsive layout.
+A simple, responsive personal portfolio website built [Just experimenting].
 
 ## Tech Stack
 
-- **Frontend Framework**: React 19.2 with TypeScript 5.9
-- **Build Tool**: Vite 7.2
-- **Styling**: Tailwind CSS 3.4 with custom configuration
+- **Frontend Framework**: React(TypeScript), Vite
 - **UI Components**: 
-  - shadcn/ui for base components (Button, Card, Badge, Avatar, etc.)
-  - Material UI (MUI) 7.3 with MUI Lab 7.0 (Timeline component)
-- **Animations**: Framer Motion 12.23
-- **Icons**: Lucide React, Font Awesome 7.1
-- **Forms**: React Hook Form 7.69
-- **Code Quality**: ESLint 9.39 with TypeScript support, Husky with lint-staged
-- **Database/CMS**: None (static site)
+  - shadcn/ui
+  - Material UI (MUI) 7.3 
+  - Lucide React, Font Awesome 7.1
 - **Deployment**: GitHub Pages
 
 ## Setup & Local Development
