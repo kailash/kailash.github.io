@@ -19,6 +19,7 @@ export default function CredlyBadge() {
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
                     {certificationBadges.map((badge) => (
                         <a
+                            key={badge.name}
                             href={badge.credlyLink}
                             target="_blank"
                             rel="noopener noreferrer"

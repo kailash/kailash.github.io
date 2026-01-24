@@ -27,12 +27,12 @@ export const certificationBadges = [
     {
         name: "AWS Certified Cloud Practitioner",
         imageLink: "https://images.credly.com/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png",
-        creadlyLink: "https://www.credly.com/badges/4bd631f0-02b0-4394-a309-6e77f04fb707/public_url"
+        credlyLink: "https://www.credly.com/badges/4bd631f0-02b0-4394-a309-6e77f04fb707/public_url"
     },
     {
         name: "Enterprise Design Thinking Practitioner",
         imageLink: "https://images.credly.com/images/bc08972c-3c7d-4b99-82a0-c94bcca36674/Badges_v8-07_Practitioner.png",
-        creadlyLink: "https://www.credly.com/badges/74259980-ed41-4607-9fb8-62e65e05db13/public_url",
+        credlyLink: "https://www.credly.com/badges/74259980-ed41-4607-9fb8-62e65e05db13/public_url",
     },
     {
         name: "LFD121: Developing Secure Software",

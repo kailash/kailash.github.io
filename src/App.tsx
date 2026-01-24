@@ -4,12 +4,13 @@ import Skills from "./components/Skills";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import { ErrorBoundary } from "./components/ErrorBoundary";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-white text-gray-900 antialiased">
+    <ErrorBoundary>
       <Navbar>
-        <main className="flex-1">
+        <main className="flex-1 w-full min-h-screen bg-white text-gray-900 antialiased">
           <Hero />
           <Skills />
           <Experience />
@@ -17,6 +18,6 @@ export default function App() {
           <Contact />
         </main>
       </Navbar>
-    </div>
+    </ErrorBoundary>
   );
 }
