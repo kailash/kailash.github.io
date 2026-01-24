@@ -1,73 +1,72 @@
-# React + TypeScript + Vite
+# Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Purpose
 
-Currently, two official plugins are available:
+A modern, responsive personal portfolio website built to showcase professional experience, projects, and skills. Designed with a clean, professional aesthetic featuring interactive animations and a mobile-first responsive layout.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
 
-## React Compiler
+- **Frontend Framework**: React 19.2 with TypeScript 5.9
+- **Build Tool**: Vite 7.2
+- **Styling**: Tailwind CSS 3.4 with custom configuration
+- **UI Components**: 
+  - shadcn/ui for base components (Button, Card, Badge, Avatar, etc.)
+  - Material UI (MUI) 7.3 with MUI Lab 7.0 (Timeline component)
+- **Animations**: Framer Motion 12.23
+- **Icons**: Lucide React, Font Awesome 7.1
+- **Forms**: React Hook Form 7.69
+- **Code Quality**: ESLint 9.39 with TypeScript support, Husky with lint-staged
+- **Database/CMS**: None (static site)
+- **Deployment**: GitHub Pages
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Setup & Local Development
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Clone the repository
+```bash
+git clone https://github.com/kailash/kailash.github.io.git
+cd kailash.github.io
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Install dependencies
+```bash
+npm install
 ```
+
+### Run development server
+```bash
+npm run dev
+```
+The site will be available at `http://localhost:5173`
+
+### Build for production
+```bash
+npm run build
+```
+
+### Preview production build locally
+```bash
+npm run preview
+```
+
+### Run linting
+```bash
+npm run lint
+npm run lint:fix  # Auto-fix linting issues
+```
+
+## Project Structure
+
+```
+src/
+├── components/        # React components (Hero, About, Skills, Experience, Projects, Contact)
+├── data/             # Content data (skills, experience, projects)
+├── hooks/            # Custom React hooks (useScrollSpy, useMobile)
+├── lib/              # Utility functions
+├── config/           # Configuration files (navigation items)
+├── theme/            # Theme configuration
+└── App.tsx           # Root component
+```
+
+## Deployment
+
+The site is automatically deployed to GitHub Pages on every push to the `main` branch via GitHub Actions pipeline.
