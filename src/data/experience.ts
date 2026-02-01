@@ -32,4 +32,20 @@ export const experiences: ExperienceItem[] = [
         description: "Started career learning full-stack development. Worked on frontend features and assisted with backend integration.",
         skills: ["JavaScript", "HTML/CSS", "Vue.js", "MySQL"],
     },
+    {
+        id: "exp4",
+        role: "Frontend Developer",
+        company: "Tech Company D",
+        period: "2016 - 2018",
+        description: "Developed responsive user interfaces and improved web application performance. Collaborated with design and backend teams to deliver quality features.",
+        skills: ["React", "JavaScript", "CSS", "Webpack"],
+    },
+    {
+        id: "exp5",
+        role: "Intern Developer",
+        company: "Tech Company E",
+        period: "2015 - 2016",
+        description: "Assisted with web development projects and learned industry best practices. Worked on bug fixes and feature implementation under senior developer guidance.",
+        skills: ["HTML", "CSS", "JavaScript", "jQuery"],
+    },
 ];

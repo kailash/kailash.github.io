@@ -25,8 +25,8 @@ export default function Navbar({ children }: { children: ReactNode }) {
                 <SidebarHeader className="border-b border-gray-100 pb-0">
                     {/* Avatar/Image Section */}
                     <div className="flex flex-col items-center w-full gap-4 py-8">
-                        <Avatar className="w-40 h-40 border-4 border-primary shadow-xl hover:shadow-2xl transition-all duration-300">
-                            <AvatarImage src="" alt="Kailash" className="bg-gradient-to-br from-purple-500 via-purple-400 to-blue-500" />
+                        <Avatar className="w-50 h-50 shadow-lg hover:shadow-2xl transition-all duration-300">
+                            <AvatarImage src="/kailash-adhikari.png" alt="Kailash" className="object-cover" />
                             <AvatarFallback className="text-6xl font-bold text-white bg-gradient-to-br from-purple-500 via-purple-400 to-blue-500">K</AvatarFallback>
                         </Avatar>
                         <div className="text-center w-full">
@@ -111,13 +111,24 @@ export default function Navbar({ children }: { children: ReactNode }) {
                     </SidebarMenu>
                 </SidebarContent>
                 <SidebarFooter>
-                    <div className="text-center space-y-2">
-                        <p className="text-xs font-light text-gray-700">
-                            © {currentYear} Kailash Adhikari.
-                        </p>
-                        <p className="text-xs text-gray-500 font-light">
-                            Made with <FavoriteIcon className="!w-3 !h-3 !text-red-500" /> using <b>React • TypeScript • shadcn/ui</b>
-                        </p>
+                    <div className="border-t border-gray-200 pt-4">
+                        <div className="text-center space-y-2">
+                            <p className="text-xs font-light text-gray-700">
+                                © {currentYear} Kailash Adhikari.
+                            </p>
+                            <p className="text-xs text-gray-600 font-light">
+                                Built with <FavoriteIcon className="!w-3 !h-3 !text-red-500 inline" />
+                            </p>
+                            <div className="text-xs text-gray-600 space-y-1">
+                                <p className="space-x-1 flex flex-wrap justify-center gap-1">
+                                    <span className="inline-block px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-semibold">React</span>
+                                    <span className="inline-block px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-semibold">TypeScript</span>
+                                    <span className="inline-block px-2 py-1 bg-orange-100 text-orange-700 rounded text-xs font-semibold">Vite</span>
+                                    <span className="inline-block px-2 py-1 bg-slate-100 text-slate-700 rounded text-xs font-semibold">shadcn/ui</span>
+                                    <span className="inline-block px-2 py-1 bg-indigo-100 text-indigo-700 rounded text-xs font-semibold">Co-pilot</span>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </SidebarFooter>
             </Sidebar>
