@@ -33,11 +33,11 @@ export default function Navbar({ children }: { children: ReactNode }) {
                             <h1 className="text-2xl font-bold text-gray-900">
                                 Kailash
                             </h1>
-                            <p className="text-sm font-medium text-purple-600 mt-1">Full-Stack Developer</p>
-                            <div className="w-12 h-0.5 bg-primary mx-auto mt-3"></div>
+                            <p className="text-sm font-medium text-purple-600 mt-0">Full-Stack Developer</p>
+                            <div className="w-12 h-0.5 bg-primary mx-auto mt-1"></div>
                         </div>
                         {/* Social Icons */}
-                        <div className="flex gap-3 justify-center mt-4">
+                        <div className="flex gap-3 justify-center mt-0">
                             <a
                                 href="https://github.com/kailash"
                                 target="_blank"
