@@ -1,120 +1,75 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { ArrowRight, Mail } from "lucide-react";
+
+const stats = [
+    { value: "12+", label: "Years Experience" },
+    { value: "Full‑Stack", label: "Specialisation" },
+    { value: "Cloud & AI", label: "Focus Areas" },
+];
 
 export default function Hero() {
     const { scrollY } = useScroll();
-
-    // Parallax effects
-    const svgY = useTransform(scrollY, [0, 300], [0, 40]);
-    const textY = useTransform(scrollY, [0, 300], [0, 80]);
-    const textOpacity = useTransform(scrollY, [0, 200], [1, 0.85]);
+    const textY = useTransform(scrollY, [0, 400], [0, 60]);
+    const textOpacity = useTransform(scrollY, [0, 400], [1, 0.9]);
 
     return (
-        <section id="home" className="w-full h-screen bg-white overflow-hidden flex flex-col">
-            {/* SVG Background */}
-            <motion.div
-                style={{ y: svgY }}
-                initial={{ opacity: 0, y: -40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-            >
-                <svg
-                    width="100%"
-                    height="280"
-                    viewBox="0 0 1400 280"
-                    preserveAspectRatio="xMidYMid slice"
-                    style={{ display: "block" }}
-                >
-                    <defs>
-                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stopColor="#A855F7" stopOpacity="0.8" />
-                            <stop offset="100%" stopColor="#2563EB" stopOpacity="0.8" />
-                        </linearGradient>
-                        <linearGradient id="grad2" x1="100%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" stopColor="#EC4899" stopOpacity="0.6" />
-                            <stop offset="100%" stopColor="#F59E0B" stopOpacity="0.6" />
-                        </linearGradient>
-                    </defs>
+        <section id="home" className="w-full min-h-screen bg-white overflow-hidden flex items-center justify-center relative">
+            {/* Background decoration */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-60" />
+                <div className="absolute -bottom-24 -left-24 w-72 h-72 bg-indigo-50 rounded-full blur-3xl opacity-50" />
+            </div>
 
-                    <rect width="1400" height="280" fill="#F9FAFB" />
-
-                    <circle cx="100" cy="50" r="60" fill="url(#grad1)" opacity="0.7" />
-                    <circle cx="1300" cy="80" r="50" fill="url(#grad2)" opacity="0.7" />
-                    <rect
-                        x="500"
-                        y="50"
-                        width="120"
-                        height="120"
-                        fill="url(#grad1)"
-                        opacity="0.5"
-                        rx="15"
-                        transform="rotate(25 560 110)"
-                    />
-                    <polygon
-                        points="1100,150 1180,200 1020,200"
-                        fill="url(#grad2)"
-                        opacity="0.6"
-                    />
-                    <circle cx="150" cy="220" r="40" fill="url(#grad1)" opacity="0.4" />
-
-                    <line
-                        x1="50"
-                        y1="140"
-                        x2="300"
-                        y2="140"
-                        stroke="#9333EA"
-                        strokeWidth="4"
-                        opacity="0.3"
-                    />
-                    <line
-                        x1="1000"
-                        y1="200"
-                        x2="1350"
-                        y2="200"
-                        stroke="#2563EB"
-                        strokeWidth="4"
-                        opacity="0.3"
-                    />
-
-                    <circle cx="1350" cy="40" r="8" fill="#A855F7" opacity="0.8" />
-                    <circle cx="20" cy="240" r="8" fill="#2563EB" opacity="0.8" />
-                    <circle cx="700" cy="260" r="6" fill="#EC4899" opacity="0.6" />
-                </svg>
-            </motion.div>
-
-            {/* Hero Text */}
             <motion.div
                 style={{ y: textY, opacity: textOpacity }}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 32 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-center max-w-5xl mx-auto py-20 sm:py-24 px-6 sm:px-8 md:px-12 flex-1 flex flex-col justify-center"
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                className="text-center max-w-2xl mx-auto px-8 relative z-10"
             >
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-primary leading-tight">
-                    Hi, I&apos;m Kailash
-                </h1>
-
-                <p className="mt-6 text-base sm:text-lg md:text-xl text-gray-600 font-light tracking-wide">
-                    Full-Stack Developer • Problem Solver • Tech Enthusiast
-                </p>
-
-                <div className="mt-8 space-y-6 max-w-2xl mx-auto">
-                    <p className="text-base sm:text-lg text-gray-700 leading-relaxed font-light">
-                        I'm a passionate full-stack developer with experience in building scalable systems and clean user experiences.
-                        I enjoy working across frontend, backend, and cloud infrastructure to create meaningful solutions.
-                    </p>
-                    <p className="text-base sm:text-lg text-gray-700 leading-relaxed font-light">
-                        When I'm not coding, you can find me exploring new technologies, contributing to open source, or helping others learn.
-                        Let's build something amazing together!
-                    </p>
+                {/* Eyebrow label */}
+                <div className="inline-flex items-center gap-2 bg-primary/5 border border-primary/10 text-primary text-[11px] font-semibold tracking-widest uppercase rounded-full px-4 py-1.5 mb-8">
+                    <span className="w-1.5 h-1.5 bg-primary rounded-full" />
+                    Senior Software Engineer
                 </div>
 
-                <div className="mt-8 flex gap-4 justify-center flex-wrap">
-                    <Button className="px-6 py-2 h-auto">
-                        View My Work
+                {/* Heading */}
+                <h1 className="text-5xl sm:text-6xl md:text-[4.25rem] font-bold text-gray-950 leading-[1.08] tracking-tight">
+                    Kailash Adhikari
+                </h1>
+
+                {/* Bio */}
+                <p className="mt-6 text-[1.05rem] text-gray-500 font-light leading-relaxed max-w-lg mx-auto">
+                    12+ years designing and delivering scalable systems — from cloud
+                    infrastructure to full‑stack products.
+                </p>
+
+                {/* Stats */}
+                <div className="mt-10 flex items-center justify-center gap-0 divide-x divide-gray-200">
+                    {stats.map(({ label, value }) => (
+                        <div key={label} className="px-6 first:pl-0 last:pr-0 text-center">
+                            <p className="text-[1.6rem] font-black text-gray-900 leading-none tracking-tight">{value}</p>
+                            <p className="text-[10px] font-semibold text-gray-400 tracking-widest uppercase mt-1.5">{label}</p>
+                        </div>
+                    ))}
+                </div>
+
+                {/* CTAs */}
+                <div className="mt-10 flex items-center gap-3 justify-center flex-wrap">
+                    <Button asChild size="lg" className="h-11 px-7 font-semibold shadow-md shadow-primary/20 hover:shadow-lg hover:shadow-primary/25 transition-all duration-300">
+                        <a href="#projects" className="flex items-center gap-2">
+                            View My Work <ArrowRight className="w-4 h-4" />
+                        </a>
                     </Button>
-                    <Button variant="outline" className="px-6 py-2 h-auto">
-                        Get in Touch
+                    <Button asChild size="lg" variant="outline" className="h-11 px-7 font-semibold border-gray-200 hover:border-gray-300 hover:bg-gray-50 transition-all duration-300">
+                        <a href="#contact" className="flex items-center gap-2">
+                            <Mail className="w-4 h-4" /> Get in Touch
+                        </a>
+                    </Button>
+                    {/* TODO: drop resume.pdf into public/ to enable */}
+                    <Button asChild size="lg" variant="ghost" className="h-11 px-6 text-gray-400 hover:text-gray-700 font-medium">
+                        <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume ↗</a>
                     </Button>
                 </div>
             </motion.div>

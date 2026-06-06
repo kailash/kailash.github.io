@@ -2,45 +2,33 @@ import { useEffect, useState, useCallback } from "react";
 import { navItems } from "../config/nav-items";
 
 const SECTION_IDS = navItems.map(item => item.id);
-const SCROLL_OFFSET = 100; // Offset from top for section detection
+const SCROLL_OFFSET = 100;
 
-export function useScrollSpy() {
-  // Initialize with synchronous detection to avoid flash
-  const [activeId, setActiveId] = useState(() => {
+function detectActiveSection(): string {
     const scrollPosition = window.scrollY + SCROLL_OFFSET;
     for (const id of SECTION_IDS) {
-      const element = document.getElementById(id);
-      if (element) {
-        const { offsetTop, offsetHeight } = element;
-        if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-          return id;
+        const el = document.getElementById(id);
+        if (el) {
+            const { offsetTop, offsetHeight } = el;
+            if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+                return id;
+            }
         }
-      }
     }
     return "home";
-  });
+}
 
-  const handleScroll = useCallback(() => {
-    const scrollPosition = window.scrollY + SCROLL_OFFSET;
+export function useScrollSpy() {
+    const [activeId, setActiveId] = useState(detectActiveSection);
 
-    for (const id of SECTION_IDS) {
-      const element = document.getElementById(id);
-      if (element) {
-        const { offsetTop, offsetHeight } = element;
-        // Check if section is in view
-        if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-          setActiveId(id);
-          break;
-        }
-      }
-    }
-  }, []);
+    const handleScroll = useCallback(() => {
+        setActiveId(detectActiveSection());
+    }, []);
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [handleScroll]);
 
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [handleScroll]);
-
-  return activeId;
+    return activeId;
 }

@@ -14,7 +14,10 @@ export interface CertificationBadge {
 export interface Project {
   title: string;
   description: string;
-  stack: string;
+  stack: string[];
+  github?: string;
+  demo?: string;
+  year?: string;
 }
 
 export interface ExperienceItem {
@@ -24,19 +27,11 @@ export interface ExperienceItem {
   period: string;
   description: string;
   skills: string[];
+  location?: string;
 }
 
 export interface NavItem {
   id: string;
   label: string;
-  icon: ComponentType;
-}
-
-export interface SocialLink {
-  id: string;
-  label: string;
-  url: string;
-  icon: 'github' | 'linkedin' | 'twitter';
-  bgColor: string;
-  hoverColor: string;
+  icon: ComponentType<{ className?: string }>;
 }

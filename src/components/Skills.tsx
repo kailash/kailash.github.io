@@ -1,43 +1,59 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import Reveal from "./Reveal";
+import SectionHeading from "./SectionHeading";
 import { skillCategories } from "@/data/skills";
 import CredlyBadge from "./CredlyBadge";
+import { Layers, Server, Cloud, Wrench } from "lucide-react";
+
+const CATEGORY_ICONS: Record<string, React.ElementType> = {
+    "Frontend":           Layers,
+    "Backend":            Server,
+    "Cloud & DevOps":     Cloud,
+    "Architecture & Data": Wrench,
+};
 
 export default function Skills() {
     return (
-        <section id="skills" className="w-full min-h-auto py-20 sm:py-24 md:py-32 px-6 sm:px-8 md:px-12 max-w-5xl mx-auto">
+        <section id="skills" className="w-full py-24 md:py-32 px-8 md:px-12 max-w-5xl mx-auto">
             <Reveal>
-                <h2 className="text-3xl sm:text-4xl font-bold mb-2 text-gray-900">Skills</h2>
-                <div className="w-16 h-1 bg-primary rounded-full mb-8"></div>
+                <SectionHeading eyebrow="What I work with" title="Skills" />
             </Reveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                {skillCategories.map((cat) => (
-                    <Reveal key={cat.category}>
-                        <Card className="border border-gray-200 hover:border-purple-400 hover:shadow-2xl transition-all duration-300 cursor-pointer group bg-white hover:bg-gradient-to-br hover:from-white hover:to-purple-50/30">
-                            <CardContent className="pt-6 space-y-4">
-                                <h3 className="text-lg font-bold text-primary group-hover:text-purple-700 transition-colors duration-300">{cat.category}</h3>
-                                <div className="flex flex-wrap gap-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {skillCategories.map((cat) => {
+                    const Icon = CATEGORY_ICONS[cat.category] ?? Layers;
+                    return (
+                        <Reveal key={cat.category}>
+                            <div className="group rounded-xl border border-gray-100 bg-white p-6 hover:border-gray-200 hover:shadow-sm transition-all duration-300">
+                                <div className="flex items-center gap-3 mb-4">
+                                    <div className="w-8 h-8 rounded-lg bg-primary/8 flex items-center justify-center shrink-0">
+                                        <Icon className="w-4 h-4 text-primary" />
+                                    </div>
+                                    <h3 className="text-sm font-semibold text-gray-900">{cat.category}</h3>
+                                </div>
+                                <div className="flex flex-wrap gap-1.5">
                                     {cat.skills.map((skill) => (
-                                        <Badge
+                                        <span
                                             key={skill}
-                                            variant="secondary"
-                                            className="hover:bg-purple-200 transition-colors duration-300"
+                                            className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium bg-gray-50 text-gray-600 border border-gray-100 hover:bg-gray-100 transition-colors duration-150"
                                         >
                                             {skill}
-                                        </Badge>
+                                        </span>
                                     ))}
                                 </div>
-                            </CardContent>
-                        </Card>
-                    </Reveal>
-                ))}
+                            </div>
+                        </Reveal>
+                    );
+                })}
             </div>
-            <div className="w-full mt-12 md:mt-16">
-                <h3 className="text-lg sm:text-xl font-semibold mb-4 text-gray-900">Certifications & Badges</h3>
-                <CredlyBadge />
-            </div>
+
+            <Reveal>
+                <div className="mt-12">
+                    <p className="text-xs font-semibold text-gray-400 tracking-widest uppercase mb-4">
+                        Certifications
+                    </p>
+                    <CredlyBadge />
+                </div>
+            </Reveal>
         </section>
     );
 }
