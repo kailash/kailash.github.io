@@ -1,0 +1,36 @@
+.badge-shell {
+  width: 140px;
+  height: 140px;
+  position: relative;
+  filter: drop-shadow(0 10px 25px rgba(124,58,237,0.35));
+}
+
+.badge-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #a855f7, #2563eb);
+  clip-path: polygon(
+    50% 0%,
+    93% 25%,
+    93% 75%,
+    50% 100%,
+    7% 75%,
+    7% 25%
+  );
+  z-index: -1;
+}
+
+.credly-badge iframe {
+  width: 140px !important;
+  height: 140px !important;
+  clip-path: polygon(
+    50% 0%,
+    93% 25%,
+    93% 75%,
+    50% 100%,
+    7% 75%,
+    7% 25%
+  );
+  object-fit: cover;
+}
