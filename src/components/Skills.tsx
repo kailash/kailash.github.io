@@ -23,7 +23,7 @@ export default function Skills() {
                     const Icon = CATEGORY_ICONS[cat.category] ?? Layers;
                     return (
                         <Reveal key={cat.category}>
-                            <div className="group rounded-xl border border-gray-100 bg-white p-6 hover:border-gray-200 hover:shadow-sm transition-all duration-300">
+                            <div className="group rounded-xl border border-gray-100 bg-white p-6 hover:border-gray-200 hover:shadow-xs transition-all duration-300">
                                 <div className="flex items-center gap-3 mb-4">
                                     <div className="w-8 h-8 rounded-lg bg-primary/8 flex items-center justify-center shrink-0">
                                         <Icon className="w-4 h-4 text-primary" />

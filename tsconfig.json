@@ -9,6 +9,5 @@
     "paths": {
       "@/*": ["./src/*"]
     }
-  },
-  "include": ["tailwind.config.ts"]
+  }
 }
